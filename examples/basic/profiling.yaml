@@ -1,0 +1,18 @@
+profiles:
+  - path: "/api/users/:id"
+    expires_at: "2025-12-31T23:59:59Z"
+    duration: 10
+    sample_rate: 1
+    profile_type: "cpu"
+  
+  - path: "/api/heavy"
+    expires_at: "2025-12-31T23:59:59Z"
+    duration: 5
+    sample_rate: 1
+    profile_type: "cpu"
+  
+  - path: "/api/users"
+    expires_at: "2025-12-31T23:59:59Z"
+    duration: 15
+    sample_rate: 2
+    profile_type: "heap"

@@ -1,0 +1,89 @@
+profiles:
+  # User management endpoints
+  - path: "/api/v1/users/:id"
+    expires_at: "2025-12-31T23:59:59Z"
+    duration: 8
+    sample_rate: 1
+    profile_type: "cpu"
+  
+  - path: "/api/v1/users"
+    expires_at: "2025-12-31T23:59:59Z"
+    duration: 12
+    sample_rate: 3
+    profile_type: "heap"
+  
+  - path: "/api/v1/users/:id/profile"
+    expires_at: "2025-12-31T23:59:59Z"
+    duration: 10
+    sample_rate: 2
+    profile_type: "cpu"
+  
+  # Product management endpoints
+  - path: "/api/v1/products"
+    expires_at: "2025-12-31T23:59:59Z"
+    duration: 15
+    sample_rate: 5
+    profile_type: "goroutine"
+  
+  - path: "/api/v1/products/:id"
+    expires_at: "2025-12-31T23:59:59Z"
+    duration: 6
+    sample_rate: 1
+    profile_type: "cpu"
+  
+  # Order management endpoints  
+  - path: "/api/v1/orders"
+    expires_at: "2025-12-31T23:59:59Z"
+    duration: 20
+    sample_rate: 2
+    profile_type: "heap"
+  
+  - path: "/api/v1/orders/:id"
+    expires_at: "2025-12-31T23:59:59Z"
+    duration: 8
+    sample_rate: 1
+    profile_type: "cpu"
+  
+  # Analytics endpoints (CPU intensive)
+  - path: "/api/v1/analytics/sales"
+    expires_at: "2025-12-31T23:59:59Z"
+    duration: 30
+    sample_rate: 1
+    profile_type: "cpu"
+  
+  - path: "/api/v1/analytics/report"
+    expires_at: "2025-12-31T23:59:59Z"
+    duration: 45
+    sample_rate: 1
+    profile_type: "cpu"
+  
+  - path: "/api/v1/analytics/users"
+    expires_at: "2025-12-31T23:59:59Z"
+    duration: 25
+    sample_rate: 2
+    profile_type: "cpu"
+  
+  # Resource-intensive endpoints
+  - path: "/api/v1/intensive/cpu"
+    expires_at: "2025-12-31T23:59:59Z"
+    duration: 15
+    sample_rate: 1
+    profile_type: "cpu"
+  
+  - path: "/api/v1/intensive/memory"
+    expires_at: "2025-12-31T23:59:59Z"
+    duration: 20
+    sample_rate: 1
+    profile_type: "heap"
+  
+  - path: "/api/v1/intensive/mixed"
+    expires_at: "2025-12-31T23:59:59Z"
+    duration: 25
+    sample_rate: 1
+    profile_type: "cpu"
+  
+  - path: "/api/v1/intensive/io"
+    expires_at: "2025-12-31T23:59:59Z"
+    duration: 18
+    sample_rate: 2
+    profile_type: "goroutine"

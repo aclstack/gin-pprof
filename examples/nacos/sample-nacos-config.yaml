@@ -1,0 +1,45 @@
+# Sample Nacos configuration for gin-pprof
+# Upload this to your Nacos server with:
+# - Namespace: public (or your custom namespace)
+# - Group: DEFAULT_GROUP
+# - Data ID: gin-pprof.yaml
+
+profiles:
+  # CPU profiling for user detail endpoint
+  - path: "/api/v1/users/:id"
+    expires_at: "2025-12-31T23:59:59Z"
+    duration: 10
+    sample_rate: 1
+    profile_type: "cpu"
+  
+  # Memory profiling for memory-intensive endpoint
+  - path: "/api/v1/memory"
+    expires_at: "2025-12-31T23:59:59Z"
+    duration: 15
+    sample_rate: 1
+    profile_type: "heap"
+  
+  # CPU profiling for heavy computation (sample every 3rd request)
+  - path: "/api/v1/heavy"
+    expires_at: "2025-12-31T23:59:59Z"
+    duration: 8
+    sample_rate: 3
+    profile_type: "cpu"
+  
+  # Goroutine profiling for users list (sample every 5th request)
+  - path: "/api/v1/users"
+    expires_at: "2025-12-31T23:59:59Z"
+    duration: 12
+    sample_rate: 5
+    profile_type: "goroutine"
+  
+  # CPU profiling for orders endpoint
+  - path: "/api/v1/orders"
+    expires_at: "2025-12-31T23:59:59Z"
+    duration: 10
+    sample_rate: 2
+    profile_type: "cpu"
+
+# Alternative simple format (for backward compatibility):
+# "/api/v1/users/:id": "2025-12-31T23:59:59Z"
+# "/api/v1/heavy": "2025-12-31T23:59:59Z"
